@@ -34,8 +34,6 @@ public class RealMobileDriver implements WebDriverProvider {
                 getAbsolutePath("src/test/resources/app-alpha-universal-release.apk"));
 
 
-
-
         return new AndroidDriver(getAppiumServerUrl(), desiredCapabilities);
     }
 
