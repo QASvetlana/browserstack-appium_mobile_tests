@@ -1,10 +1,12 @@
 package tests.selenoidtest;
 
 import com.codeborne.selenide.Configuration;
+import config.SecretsConfig;
 import drivers.LocalMobileDriver;
 import drivers.SelenoidMobileDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,6 +17,7 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 
 
 public class SelenoidTestBase {
+    public static SecretsConfig secretsConfig = ConfigFactory.create(SecretsConfig.class);
     @BeforeAll
     public static void setUp() {
         addListener("AllureSelenide", new AllureSelenide());

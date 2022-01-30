@@ -10,12 +10,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static tests.selenoidtest.SelenoidTestBase.secretsConfig;
 
 public class SelenoidMobileDriver implements WebDriverProvider {
 
     public static URL getSelenoidUrl() {
         try {
-            return new URL("https://user1:1234@selenoid.autotests.cloud:4444/wd/hub");
+            return new URL(String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub",
+                    secretsConfig.selenoidUser(),secretsConfig.selenoidPassword()));
         } catch (MalformedURLException e) {
             throw new RuntimeException();
         }
