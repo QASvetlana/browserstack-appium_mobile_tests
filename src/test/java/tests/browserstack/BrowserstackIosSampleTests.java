@@ -1,5 +1,6 @@
 package tests.browserstack;
 
+import config.Conf;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
@@ -19,11 +20,11 @@ public class BrowserstackIosSampleTests {
         DesiredCapabilities caps = new DesiredCapabilities();
 
         // Set your access credentials
-        caps.setCapability("browserstack.user", "svetlana_yx2FnD");
-        caps.setCapability("browserstack.key", "fkSE5khTpbcAoCV3fqqs");
+        caps.setCapability("browserstack.user", Conf.browserstackUser());
+        caps.setCapability("browserstack.key", Conf.browserstackKey());
 
         // Set URL of the application under test
-        caps.setCapability("app", "bs://444bd0308813ae0dc236f8cd461c02d3afa7901d");
+        caps.setCapability("app", Conf.browserstackApp());
 
         // Specify device and os_version for testing
         caps.setCapability("device", "iPhone XS");

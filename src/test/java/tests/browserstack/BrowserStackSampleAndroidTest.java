@@ -1,5 +1,6 @@
 package tests.browserstack;
 
+import config.Conf;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -19,11 +20,11 @@ public class BrowserStackSampleAndroidTest {
         DesiredCapabilities caps = new DesiredCapabilities();
 
 
-        caps.setCapability("browserstack.user", "svetlana_yx2FnD");
-        caps.setCapability("browserstack.key", "fkSE5khTpbcAoCV3fqqs");
+        caps.setCapability("browserstack.user", Conf.browserstackUser());
+        caps.setCapability("browserstack.key", Conf.browserstackKey());
 
 
-        caps.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
+        caps.setCapability("app", Conf.browserstackApp());
 
 
         caps.setCapability("device", "Google Pixel 3");

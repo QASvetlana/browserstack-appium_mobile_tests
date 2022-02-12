@@ -1,8 +1,7 @@
 package tests.selenoidtest;
 
 import com.codeborne.selenide.Configuration;
-import config.SecretsConfig;
-import drivers.LocalMobileDriver;
+import config.Conf;
 import drivers.SelenoidMobileDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -17,7 +16,7 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 
 
 public class SelenoidTestBase {
-    public static SecretsConfig secretsConfig = ConfigFactory.create(SecretsConfig.class);
+    public static Conf secretsConfig = ConfigFactory.create(Conf.class);
     @BeforeAll
     public static void setUp() {
         addListener("AllureSelenide", new AllureSelenide());
